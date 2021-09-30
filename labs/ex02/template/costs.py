@@ -11,3 +11,12 @@ def compute_loss(y, tx, w):
     # TODO: compute loss by MSE / MAE
     # ***************************************************
     raise NotImplementedError
+
+def compute_loss(y, tx, w):
+    """Calculate the loss.
+
+    You can calculate the loss using mse or mae.
+    """
+    e = y - tx.dot(w)
+    
+    return 1/(2 * len(y)) * np.transpose(e).dot(e)
